@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plantilla de memoria en LaTeX para la ETSIT - Universidad Rey Juan Carlos
+%%
+%% Por Gregorio Robles <grex arroba gsyc.urjc.es>
+%%     Grupo de Sistemas y Comunicaciones
+%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
+%%     Universidad Rey Juan Carlos
+%% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
+%%  etc. Muchas gracias a todos)
+%%
+%% La última versión de esta plantilla está siempre disponible en:
+%%     https://github.com/gregoriorobles/plantilla-memoria
+%%
+%% Para obtener PDF, ejecuta en la shell:
+%%   make
+%% (las imágenes deben ir en PNG o JPG)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt]{book}
+%\usepackage[T1]{fontenc}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage{url}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}  %% H para posicionar figuras
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage{latexsym}  %% Logo LaTeX
+
+\title{Virtual reality editor for virtual reality scenes}
+\author{Julian A. Perez Muñoz}
+
+\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
+\begin{document}
+
+\renewcommand{\refname}{Bibliografía}  %% Renombrando
+\renewcommand{\appendixname}{Apéndice}
+
+\cleardoublepage
+\chapter{Introducción}
+\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
+\pagenumbering{arabic} % para empezar la numeración de página con números
+
+En este capítulo realizaré una breve presentación del proyecto, tratatando objetivos tanto generales como específicos, y a su vez, aplicando un contexto sobre este y sobre las causas que nos ha llevado a realizar dicho trabajo. 
+
+El fin que tratamos de perseguir con este proyecto es la construcción de un editor de escenas en realidad aumentada que sea usable tanto desde el navegador como desde otras herramientas creadas para ello, como pueden ser, las gafas de realidad virtual.
+
+Para la realización de las escenas en realidad virtual, hemos trabajado con el framework, A-Frame. Acompañado por otras tecnologias que ayudan a completar la creación de dichos escenarios como pueden ser JavaScript o HTML, más adelante profundizaremos sobre ellas.
+\section{Contexto}
+\label{sec:contexto}
+Antes de comenzar con los objetivos, paso a explicar el contexto del trabajo, y la motivación para la creación del mismo.
+
+Hoy en día el poder de la realidad aumentada y realidad virutal es cada vez mayor, de hecho, las compañias más importantes del mundo como son Google, Apple, Facebook o Microsoft ya llevan trabajando en ellas desde hace bastante tiempo. Aunque el poder de esta tecnología sea cada vez mayor, se trata de una tecnología en desarrollo, este es uno de los motivos que me alentó a empezar este proyecto.
+
+Algunas de las acciones que podemos realizar gracias a esta tecnología y por la cual es tan interesante y crea tanta expectación son la construcción de distintas escenas mediante el uso de figuras en 3D y  manipulación de otros objetos como pueden ser, gltfs, o el poder locarlizarse en distintos lugares de manera inmediata.
+
+Lo peculiar de este proyecto es la intención de incorporar una innovación a estas acciones, la posibilidad de trabajar en la propia realidad virtual.
+
+Para terminar, cabe destacar que, a parte de las ya nombradas anteriormente,esta tecnologia es usada en otros ambitos como pueden ser simuladores, museos o medicina. En este útlimo podemos hablar sobre nixi for children, un personaje creado en realidad aumentada que ayuda a los niños a prepararse para la cirugía, como este, muchos más.
+
+Del mismo modo mi proyecto también puede ser aplicado a diferentes ambitos, tanto profesionales como pueden ser el mundo de la arquitectura o el diseño, hasta personales, como simple ocio.
+
+\section{Objetivo general}
+\label{sec:objetivo general}
+
+Como ya he adelantado anteriormente, el objetivo principal de este proyecto es la creación de un editor de escenas para realidad aumentada. Gracias a las diversas funcionalidades, que describiré más adelante, la aplicación va a permitir poder crear cualquier figura o escena que puedas imaginar. Desde grandes escenas con varias figuras de gran tamaño, como pueden ser un conjunto de edificios hasta un escenario con una figura de lo más insignificante como puede ser un elemento de construcción de dicho edificio, un tornillo. Buscamos realizar todo esto de una manera sencilla y con una interfaz de usuario agradable e intutiva.
+
+\section{Objetivos específicos}
+\label{sec:Objetivos específicos}
+
+A continuación paso a especificar los distintos objetivos que tenemos para realizar este proyecto al que mas adelante daremos solución. 
+
+\begin{itemize}
+  \item La aplicación debe funcionar en el navegador web.
+  \item La aplicación debe funcionar en las gafas de realidad virtual.
+  \item El editor de escenas debe tener una página principal
+  \item El editor de escenas debe tener una página de instrucciones.
+  \item El editor de escenas debe tener la propia pagina donde poder crear, editar figuras en la escena.
+  (Estas tres a lo mejor puedo ponerlo en una.)
+  \item El editor contará con un menú, desde el cual podrá crear diferentes figuras, pueden ser figuras básicas como gltfs.
+  \item Todas estas figuras podrán ser modificadas tanto en orientación, rotación, colores, y en material.
+  \item El editor debera contar con un botón que le permita acceder la funcionalidad "Modo grupo", que permita unir figuras para crear una sola como conjunto de varias, manejadas por un "manejador".
+  \item El usuario podrá esconder los manejadores mediante un botón en la escena.  
+  \item En el editor nos encontraremos un botón para cambiar a distintos ambientes.
+  \item El usuario podrá moverse por el escenario, tanto en la versión web como en la de realidad aumentada.
+  \item El código de la aplicación y el acceso a los diferentes ejemplos estarán disponibles en la plataforma GitHub.
+\end{itemize}
+
+\section{Estructura de la memoria}
+\label{sec:estructura}
+En esta sección voy a describir la estructura de la memoria para una mejor 
+comprensión sobre la misma.
+\begin{itemize}
+\item Primer capítulo, introduccion.En este apartado se realiza una breve descripción del proyecto añadiendole un contexto y presentando los objetivos generales y específicos del trabajo.
+\item Segundo capítulo, estado del arte y tecnologías utilizadas. Donde se describe las tecnologías que hemos usado para la correcta realización del proyecto.
+\item Tercer capítulo, Desarollo del proyecto, Ponemos de manifiesto los diferentes procesos que hemos seguido para la realización de este, exponiendo tanto los problemas que han ido surgiendo como las soluciones utilizadas.
+\item Cuarto capítulo, Resultado final. En este capitulo creo un manual de usuario para ampliar el modo de uso de la aplicación, tambien describo de una manera mas técnica los componentes que hemos utilizado para la realización de la misma.
+\item Quinto capítulo, conclusiones. Analizaremos los objetivos que teniamos marcados y como hemos llegado hasta ellos, exponiendo problemas y soluciones.
+\end{itemize}
+\end{document}

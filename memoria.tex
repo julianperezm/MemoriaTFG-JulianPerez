@@ -31,8 +31,8 @@
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 
-\title{Memoria del Proyecto}
-\author{Nombre del autor}
+\title{Virtual reality editor for virtual reality scenes}
+\author{Julian A. Perez Muñoz}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -51,12 +51,12 @@
 \vspace{1.75cm}
 
 \Large
-TITULACIÓN EN MAYÚSCULAS
+GRADO EN INGENIERÍA EN TECNOLOGIAS DE LA TELECOMUNICACIÓN
 
 \vspace{0.4cm}
 
 \large
-Curso Académico 202X/202X
+Curso Académico 2020/2021
 
 \vspace{0.8cm}
 
@@ -65,12 +65,12 @@ Trabajo Fin de Grado/Máster
 \vspace{2.5cm}
 
 \LARGE
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+VIRTUAL REALITY EDITOR FOR VIRTUAL REALITY SCENES
 
 \vspace{4cm}
 
 \large
-Autor : Nombre del Alumno/a \\
+Autor : Julián Ángel Pérez Muñoz\\
 Tutor : Dr. Nombre del Profesor/a
 \end{center}
 \end{titlepage}
@@ -210,100 +210,60 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este capítulo se introduce el proyecto.
-Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
+En este capítulo realizré una breve presentación del proyecto, tratatando objetivos tanto generales como específicos, y a su vez, aplicando un contexto sobre este y sobre las causas que nos ha llevado a realizar dicho trabajo. 
 
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
+El fin que tratamos de perseguir con este proyecto es la construcción de un editor de escenas en realidad aumentada que sea usable tanto desde el navegador como desde otras herramientas creadas para ello, como pueden ser, las gafas de realidad virtual.
 
-Aconsejo a todo el mundo que mire y se inspire en memorias pasadas.
-Las memorias de los proyectos que he llevado yo están (casi) todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
+Para la realización de las escenas en realidad virtual, hemos trabajado con el framework, A-Frame. Acompañado por otras tecnologias que ayudan a completar la creación de dichos escenarios como pueden ser JavaScript o HTML, más adelante profundizaremos sobre ellas.
+\section{Contexto}
+\label{sec:contexto}
+Antes de comenzar con los objetivos, paso a explicar el contexto del trabajo, y la motivación para la creación del mismo.
 
-\section{Sección}
-\label{sec:seccion}
+Hoy en día el poder de la realidad aumentada y realidad virutal es cada vez mayor, de hecho, las compañias más importantes del mundo como son Google, Apple, Facebook o Microsoft ya llevan trabajando en ellas desde hace bastante tiempo. Aunque el poder de esta tecnología sea cada vez mayor, se trata de una tecnología en desarrollo, este es uno de los motivos que me alentó a empezar este proyecto.
 
-Esto es una sección, que es una estructura menor que un capítulo. 
+Algunas de las acciones que podemos realizar gracias a esta tecnología y por la cual es tan interesante y crea tanta expectación son la construcción de distintas escenas mediante el uso de figuras en 3D y  manipulación de otros objetos como pueden ser, gltfs, o el poder locarlizarse en distintos lugares de manera inmediata.
 
-Por cierto, a veces me comentáis que no os compila por las tildes.
-Eso es un problema de codificación.
-Al guardar el archivo, guardad la codificación de ``ISO-Latin-1'' a ``UTF-8'' (o viceversa) y funcionará.
+Lo peculiar de este proyecto es la intención de incorporar una innovación a estas acciones, la posibilidad de trabajar en la propia realidad virtual.
 
-\subsection{Estilo}
-\label{subsec:estilo}
+Para terminar, cabe destacar que, a parte de las ya nombradas anteriormente,esta tecnologia es usada en otros ambitos como pueden ser simuladores, museos o medicina. En este útlimo podemos hablar sobre nixi for children, un personaje creado en realidad aumentada que ayuda a los niños a prepararse para la cirugía, como este, muchos más.
 
-Recomiendo leer los consejos prácticos sobre escribir documentos científicos en \LaTeX \ de Diomidis Spinellis\footnote{\url{https://github.com/dspinellis/latex-advice}}.
+Del mismo modo mi proyecto también puede ser aplicado a diferentes ambitos, tanto profesionales como pueden ser el mundo de la arquitectura o el diseño, hasta personales, como simple ocio.
 
-Lee sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}. 
-Las comas en español no se ponen al tuntún.
-Y nunca, nunca entre el sujeto y el predicado (p.ej. en ``Yo, hago el TFG'' sobre la coma).
-La coma no debe separar el sujeto del predicado en una oración, pues se cortaría la secuencia natural del discurso.
-No se considera apropiado el uso de la llamada coma respiratoria o \emph{coma criminal}.
-Solamente se suele escribir una coma para marcar el lugar que queda cuando omitimos el verbo de una oración, pero es un caso que se da de manera muy infrecuente al escribir un texto científico (p.ej. ``El Real Madrid, campeón de Europa'').
+\section{Objetivo general}
+\label{sec:objetivo general}
 
-A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
-Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
-También habrás tomado nota de cómo se ponen las ``comillas dobles'' para que se muestren correctamente. 
-Nota que hay unas comillas de inicio (``) y otras de cierre (''), y que son diferentes.
-Volviendo a las referencias, nota que al compilar, la primera vez se crea un diccionario con las referencias, y en la segunda compilación se ``rellenan'' estas referencias. 
-Por eso hay que compilar dos veces tu memoria.
-Si no, no se crearán las referencias.
+Como ya he adelantado anteriormente, el objetivo principal de este proyecto es la creación de un editor de escenas para realidad aumentada. Gracias a las diversas funcionalidades, que describiré más adelante, la aplicación va a permitir poder crear cualquier figura o escena que puedas imaginar. Desde grandes escenas con varias figuras de gran tamaño, como pueden ser un conjunto de edificios hasta un escenario con una figura de lo más insignificante como puede ser un elemento de construcción de dicho edificio, un tornillo. Buscamos realizar todo esto de una manera sencilla y con una interfaz de usuario agradable e intutiva.
 
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
+\section{Objetivos específicos}
+\label{sec:Objetivos específicos}
 
-A continuación un bloque ``verbatim'', que se utiliza para mostrar texto tal cual.
-Se puede utilizar para ofrecer el contenido de correos electrónicos, código, entre otras cosas.
+A continuación paso a especificar los distintos objetivos que tenemos para realizar este proyecto al que mas adelante daremos solución. 
 
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
+\begin{itemize}
+  \item La aplicación debe funcionar en el navegador web.
+  \item La aplicación debe funcionar en las gafas de realidad virtual.
+  \item El editor de escenas debe tener una página principal
+  \item El editor de escenas debe tener una página de instrucciones.
+  \item El editor de escenas debe tener la propia pagina donde poder crear, editar figuras en la escena.
+  (Estas tres a lo mejor puedo ponerlo en una.)
+  \item El editor contará con un menú, desde el cual podrá crear diferentes figuras, pueden ser figuras básicas como gltfs.
+  \item Todas estas figuras podrán ser modificadas tanto en orientación, rotación, colores, y en material.
+  \item El editor debera contar con un botón que le permita acceder la funcionalidad "Modo grupo", que permita unir figuras para crear una sola como conjunto de varias, manejadas por un "manejador".
+  \item El usuario podrá esconder los manejadores mediante un botón en la escena.  \item En el editor nos encontraremos un botón para cambiar a distintos ambientes.
+  \item El usuario podrá moverse por el escenario, tanto en la versión web como en la de realidad aumentada.
+  \item El código de la aplicación y el acceso a los diferentes ejemplos estarán disponibles en la plataforma GitHub.
+\end{itemize}
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
-
-En esta sección se debería introducir la esctura de la memoria. 
-
-Así:
-
+En esta sección voy a describir la estructura de la memoria para una mejor 
+comprensión sobre la misma.
 \begin{itemize}
-  \item En el primer capítulo se hace una intro al proyecto.
-  
-  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
-  
-  \item A continuación se presenta el estado del arte en el capítulo~\ref{chap:estado}.
-  
-  \item \ldots
+\item Primer capítulo, introduccion.En este apartado se realiza una breve descripción del proyecto añadiendole un contexto y presentando los objetivos generales y específicos del trabajo.
+\item Segundo capítulo, estado del arte y tecnologías utilizadas. Donde se describe las tecnologías que hemos usado para la correcta realización del proyecto.
+\item Tercer capítulo, Desarollo del proyecto, Ponemos de manifiesto los diferentes procesos que hemos seguido para la realización de este, exponiendo tanto los problemas que han ido surgiendo como las soluciones utilizadas.
+\item Cuarto capítulo, Resultado final. En este capitulo creo un manual de usuario para ampliar el modo de uso de la aplicación, tambien describo de una manera mas técnica los componentes que hemos utilizado para la realización de la misma.
+\item Quinto capítulo, conclusiones. Analizaremos los objetivos que teniamos marcados y como hemos llegado hasta ellos, exponiendo problemas y soluciones.
 \end{itemize}
 
 
@@ -314,7 +274,7 @@ Así:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage % empezamos en página impar
-\chapter{Objetivos} % título del capítulo (se muestra)
+\chapter{Estado del arte y tecnologías utilizadas} % título del capítulo (se muestra)
 \label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
 
 \section{Objetivo general} % título de sección (se muestra)
@@ -347,7 +307,7 @@ Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Estado del arte}
+\chapter{Desarollo del proyecto}
 \label{chap:estado}
 
 Descripción de las tecnologías que utilizas en tu trabajo. 
@@ -423,7 +383,7 @@ Aquí un ejemplo de tabla, la Tabla~\ref{tabla:ejemplo} (siento ser pesado, pero
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Diseño e implementación}
+\chapter{Resultados}
 
 Aquí viene todo lo que has hecho tú (tecnológicamente). 
 Puedes entrar hasta el detalle. 
@@ -461,31 +421,6 @@ Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura 
 
 Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EXPERIMENTOS Y VALIDACIÓN %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Experimentos y validación}
-
-Este capítulo se introdujo como requisito en 2019. 
-Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
-Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Resultados}
-
-En este capítulo se incluyen los resultados de tu trabajo fin de grado.
-
-Si es una herramienta de análisis lo que has realizado, aquí puedes poner ejemplos de haberla utilizado para que se vea su utilidad.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
