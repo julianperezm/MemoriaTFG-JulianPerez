@@ -266,39 +266,77 @@ comprensión sobre la misma.
 \item Quinto capítulo, conclusiones. Analizaremos los objetivos que teniamos marcados y como hemos llegado hasta ellos, exponiendo problemas y soluciones.
 \end{itemize}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OBJETIVOS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage % empezamos en página impar
-\chapter{Estado del arte y tecnologías utilizadas} % título del capítulo (se muestra)
-\label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
-
-\section{Objetivo general} % título de sección (se muestra)
-\label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
-
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
-
-Recuerda que los objetivos siempre vienen en infinitivo.
-
-
-\section{Objetivos específicos}
-\label{sec:objetivos-especificos}
-
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
-
-
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
 A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
 Hay gente que añade un diagrama de GANTT.
 Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
+
+\cleardoublepage % empezamos en página impar
+\chapter{Estado del arte y tecnologías utilizadas} % título del capítulo (se muestra)
+\label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
+\section{WebGL} % título de sección (se muestra)
+\label{sec:WebGl}
+WebGL~\cite{webGl} es una tecnología creada por Vladimir Vukicevic \footnote{\url{https://en.wikipedia.org/wiki/Vladimir_Vukićević}}, su trabajo comienza con la creación de un prototipo de OpenGL~\cite{openGL} para el elemento canvas de HTML, llamado Canvas 3D. 
+
+Esta API\footnote{\url{https://es.wikipedia.org/wiki/Interfaz_de_programación_de_aplicacione}} de gráficos 3D basada en OpenGL permite a los navegadores modernos renderizar escenas 3D de una manera estandar y eficiente. Esta idea abrió un universo de posibilidades en las web basadas en entornos 3D como son los videojuegos, visualización científica o imagenes médicas. 
+
+Estaba originalmente basado en OpenGL ES 2.0, especificación creada para el iPhone y iPad, a medida que esta se iba desarollando, su objetivo fue la usabilidad en disitintos sitemas operativos y dispositivos. Utiliza el elemento canvas ya que es una evolución del Canvas 3D y se accede a este mediante el DOM. \footnote{\url{https://en.wikipedia.org/wiki/Document_Object_Model}}
+
+Los programas WebGL estan escritos en en JavaScript y en Shading language, un lenguaje similar a C, C++. Por último esta tecnología fue diseñada y es mantenida por el grupo, non-profit Khronos Group.
+
+\section{WebXR} % título de sección (se muestra)
+\label{sec:WebXR}
+WebXR~\cite{webXR} quiza no hayas escuchado hablar de esta tecnología pero si de WebVR, ya que antes del 2020 ese era su nombre, con el objetivo de acceder a las principales capacidades de los dispositovs tanto de realidad aumentada (AR), de realidad virtual(VR) como de realidad mixta el nombre VR carecía de sentido ya que en cuanto a los dispositovs que englobaba VR se quedaba corto. Otra diferencia importante sobre esta evolución, es el soporte de controladores de entradas basado en la API gamepad\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API}}.
+
+Otra pregunta muy común sobre esta tecnología es, ¿Tienen la misma relación OpenXR\footnote{\url{https://www.khronos.org/openxr/}}-WebXR que OpenGL-WebGl? la respuesta es no, ya que ambas son distintas API desarrolladas por distintas organismos. 
+
+Para poder entender mejor que es WebXR, debemos tener claro, que hace y que no, WebXR permite manejar el proceso de renderización de las vistas que simulan la experiencia 3D y proporciona los datos necesarios para actualizar las imagenes mostrados al usuario. Debemos tener claro que no es una tecnología de renderizado, WebGl te ayuda con esto.
+
+Los principales casos de uso de esta API son desde la visualización de objetos/datos hasta experiencias artísticas. 
+
+\section{Three.js} % título de sección (se muestra)
+\label{sec:Three}
+Three.js\footnote{\url{https://threejs.org}} es una biblioteca y una API escrita en JavaScript cuyo objetivo principal es crear y visualizar figuras en 3D. Esta tecnlogía usa WebGL y es capaz de mostrar las figuras en el navegador. Ela biblioteca tiene diversas características como son efectos, escenas, animaciones, materiales o sombreados. Tambien soporta la realidad aumentada o virtual apoyado en WebXR.
+
+Three.js fue creada por Ricardo Cabello en 2010 y hoy en día está alojado en GitHub
+
+A continuación puedes ver un ejemplo de escena creada con three.js
+\begin{figure}
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{img/threejs.png}
+  \caption{Escena creada con three.js}\label{fig:three}
+\end{figure}
+
+
+\section{HTML5} % título de sección (se muestra)
+\label{sec:HTML5}
+\section{JavaScript} % título de sección (se muestra)
+\label{sec:JavaScript}
+\section{A-Frame} % título de sección (se muestra)
+\label{sec:A-Frame}
+\section{Github} % título de sección (se muestra)
+\label{sec:GitHub}
+\section{PyCharm} % título de sección (se muestra)
+\label{sec:GitHub}
+Se trata de un entorono de desarrollo integrado (IDE) que es utiliza para la programación, es un software creado por la compañia JetBrains~\cite{jetbrains}.
+
+Este software es multiplataforma con Windows, macOS y Linux. Ha sido utilizado para la creación de este proyecto y por eso es una parte fundamental de esto.
+
+Tiene infinidad de ventajas entre las que están:
+
+\begin{itemize}
+    \item Asistencia y análisis de codificación, con ayuda a la finalización del codigo, sintaxis y resaltado de errores.
+    \item Navegación entre proyectos y ficheros.
+    \item Acceso a la ejecución del codigo en el navegador mediante accesos directos.
+\end{itemize}
+
+Pycharm proporciona una API para que los desarrolladores puedan crear distintos plugind y de este modo se pueda crear codigo de manera más facil y eficiente.
+
+\section{Latex} % título de sección (se muestra)
+\label{sec:GitHub}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
