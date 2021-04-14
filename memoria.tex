@@ -312,13 +312,71 @@ A continuación puedes ver un ejemplo de escena creada con three.js
 
 \section{HTML5} % título de sección (se muestra)
 \label{sec:HTML5}
+HTML es uno de lo pilares fundamentales de este proyecto ya que junto JavaScript es uno de los lenguajes en los que se ha basado el trabajo.
+
+Como ya adelantaba, HTML~\cite{HTML} es un lenguaje de marcado utilizado en el desarrollo del contenido web. Suele estar acompañado por otras tecnologías que la complementan, en cuanto apariencia, CSS, no muy utilizada en este proyecto y en cuanto a funcionalidad, JavaScript, muy utilizada en este trabajo.
+
+Una de las características de HTML es la utilización de marcas para etiquetar los distintos elemetnos del documento para luego mostrarlo en la web. Algunas de las etiquetas son: <head>, <ul>, <p>, <span>.
+
+Estas etiquetas permiten al elemento tener una gran versatiliad, estructura lógica y una facilidad considerable de entendimiento para la gente que lo lee. Dentro de estas podemos encontrar los atributos\footnote{\url{https://es.wikipedia.org/wiki/Atributo_HTM}} que son utilizadas para controlar el comportamiento de dicha equiqueta.
+
+Un ejemplo básico de un docuemento HTML puede ser el siguiente:
+
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TFG Julian</title>
+  </head>
+  <body>
+    <p>Hola mundo!</p>
+  </body>
+</html>
+\end{verbatim}
+
+HTML es un lenguaje de marcado que nos permite indicar la estructura de nuestro documento mediante etiquetas. Este lenguaje nos ofrece una gran adaptabilidad, una estructuración lógica y es fácil de interpre­tar tanto por humanos como por máquinas.
+
+Cuando hablamos de HTML es importante destacar el DOM, es la organización de todos elementos del documenot organizado en nodos, el conjutno de todos estos se denomina arbol de nodos. Gracias al DOM y al lenguaje JavaScript podremos accedes a los elementos para un libre utilización de ellos.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/1200px-DOM-model.svg.png}
+  \caption{Visualización gráfica del DOM}\label{html}
+\end{figure}
+
+
+Para terminar, destacar que ahora mismo HTML se ecuentra en su versión HTML5, publicada en 2014, donde se añadieron varias nuevas funcioanliadades como la inlsion de nuevas etqietas o la compatibilidad con varias APIS con Canvas o WebGL.
 \section{JavaScript} % título de sección (se muestra)
 \label{sec:JavaScript}
+
+JavaScript(JS)~\cite{eloquent} es el lenguaje de programación que se complementa con el lenguaje anteriormente explicado, HTML. JS se suele utliza para controlar comportamientos de la página web, aunque este es su objetivo principal, este lenguaje tambien se utiliza en otros entorrnos que no son el navegador.
+
+Para ampliar información sobre este, podemos decir que JavaScript es un lenguaje que permite la construcción de objetos basada en prototipos\footnote{\url{https://es.wikipedia.org/wiki/Programación_basada_en_prototipos}}, esto nos ayuda al programador ha crear objetos no mediante el uso, instancias de clases sino mediante la clonación de objetos. La sintaxis de Javascript con la intención de no complicar mucho este, es muy parecida a otros lenguajes como Java y C++.
+
+Centrandonos en las funcionalidades que ofrece este lenguaje, Javascript nos permite crear los comportamientos de los distintos elementos  HTML mediante el acceso al DOM, A continuación puedes ver un pequeño ejemplo de como realizar un hola mundo en JavaScript:
+
+
+\begin{verbatim}
+ <script>
+  document.write("Hola Mundo");
+</script>   
+\end{verbatim}
+
+Gracias a este lenguaje, puedes crear contenido de actualización dinámica con la creación de evento, controlar mulitmedia o animar imagenes, por lo que HTML deja de ser un lenguaje estático, 
+
+JavaScript se utiliza principalmente del lado del cliente como parte del navegador web. Si hablamos del lado del servidor podemos hablar de Node.js\footnote{\url{https://nodejs.org/es/}}, se trata de un entorno  en tiempo de ejecucion basado en JS
+
+
+
 \section{A-Frame} % título de sección (se muestra)
 \label{sec:A-Frame}
+
+
 \section{Github} % título de sección (se muestra)
 \label{sec:GitHub}
-GitHub~\cite{jetbrains} es una platafroma de alamacenamiento y administración  de software, Este sistema es basado en el control de control de versiones \footnote{\url{https://es.wikipedia.org/wiki/TeX}} y en Git \footnote{\url{https://es.wikipedia.org/wiki/TeX}}.
+GitHub~\cite{GITHUB} es una platafroma de alamacenamiento y administración  de software, Este sistema es basado en el control de control de versiones \footnote{\url{https://es.wikipedia.org/wiki/TeX}} y en Git \footnote{\url{https://es.wikipedia.org/wiki/TeX}}.
 
 Gracias al control de versiones, el desarrollador puede administrar y llevar un registro de cualquier modificación sobre el proyecto. este sistema permite al desarrollador trabajar de una forma segura mediante las ramas. Las ramas te permiten duplicar el codigo fuente, donde puede hacer cambios sin afectar al proyecto "principal". Puedes fusionar las disitintas ramas si lo deseas.
 
@@ -357,6 +415,11 @@ Se trata de un softwate libre bajo la licencia LPPL\footnote{\url{https://es.wik
 
 Este sistema ha sido fundamental a la hora de crear este proyecto ya que esta memoria esta creada utilizando LaTeX.
 
+
+\section{GLTFs} % título de sección (se muestra)
+\label{sec:gltfs}
+\section{Otros} % título de sección (se muestra)
+\label{sec:Otros}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ESTADO DEL ARTE %
