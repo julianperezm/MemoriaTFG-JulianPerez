@@ -373,7 +373,50 @@ JavaScript se utiliza principalmente del lado del cliente como parte del navegad
 \section{A-Frame} % título de sección (se muestra)
 \label{sec:A-Frame}
 
+A-frame~\cite{a} es la tecnología mas importante de este proyecto, ya que es la base fundamental de este. A-frame es un framework creado para la construcción de experiencias en realidad virtual, basado en HTML, por lo que como hemos dicho antes, es un leguaje bastane sencillo e intuitivo. una de las caracteristicas claves de A-frame es el framwork entidad-componente para three.js.
 
+Esta tecnología fue desarrollada por el euipo de mozilla VR durante de 2015. El objetivo principal de estos era permitir crear dichas escenas sirectamente en HTML sin conocer WebGL. A parte de esta, también usa otras tecnologías anteriormente explicadas como son WebXR y JavaScript.
+
+Un ejemplo de creación de figuras en A-frame mediante HTML puede ser el siguiente:
+
+\begin{verbatim}
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
+\end{verbatim}
+
+El resultado en la página web de este codigo, es el siguiente:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/aframe.png}
+  \caption{Escena básica A-Frame}\label{aframe}
+\end{figure}
+
+Explicando un poco mas sobre el codigo del escenario de ejemplo, podemos destacar: 
+
+\begin{itemize}
+    \item la inclusion de las dependencias de Aframe en el elemento Head, nos permite usar todos los elementos de esta tecnlogia
+    \item La creacion de las diferentes figuras mediante sus respectivas etiequetas
+    \item Modificación de ciertos aspectos de las figturas mediante los atributos
+\end{itemize}
+
+Profundizanod un poco  mas sobre entidad y componente y como conclusion, Una entidad es el objento en sí creado emdiante HTML y el componente es el corpotamiento que le podemos asginar a dicha figura, estos se realizan el JavaScript. 
+
+Estos componentes siguen una escrtura estandarizada, algunos son el schema, propiedas del componente, init, parte del componente que se ejectuta al iniciar el componente. La manera correcta de incluir un componente a la escena es añadirselo al elemento como si de un atributo se tratara.
+
+ 
 \section{Github} % título de sección (se muestra)
 \label{sec:GitHub}
 GitHub~\cite{GITHUB} es una platafroma de alamacenamiento y administración  de software, Este sistema es basado en el control de control de versiones \footnote{\url{https://es.wikipedia.org/wiki/TeX}} y en Git \footnote{\url{https://es.wikipedia.org/wiki/TeX}}.
