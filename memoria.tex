@@ -492,6 +492,160 @@ Podemos ver más en detalle el proceso en la siguiente imagen:
   \caption{Estructura metodología Scrum}\label{scrum}
 \end{figure}
 
+\section{Sprint 0} % título de sección (se muestra)
+\label{sec:sprint0}
+En este primer sprint el Scrum Master comenzó a introducir las principales tecnologías que iban a ser usadas en el proyecto, A-frame, JavaScript y HTML. Por lo que en este sprint me dedique a realizar una actividad que asentará la unión entre ambas tecnologías.
+
+\subsection{Objetivo}
+El objetivo principal de este Sprint es aprender a usar A-Frame para poder así poder introducrime en la tecnología y aprender como utilizarla. la creación de distintas entidades, eventos, componentes y físicas son los princioales objetivos. En este sprint tenemos que tener en cuenta que una de las principales tecnologías utilizadas, JavaScript, era completamente nueva para mí, por lo que también tuve que aprender sobre esta. Para consolidar todo lo anterior la tarea a realizar fue la creación de un minijuego en el cual crear un componente y que este, reacciona a un evento.
+
+\subsection{Desarrollo}
+Todo comienza haciendose una idea de que va a tratar el minijuego, que componente vamos a crear y que comportamiento le vamos a dar.
+
+Tras pensarlo, concluyo que el minijuego tratará de un recorrido en el cual debes adivinar una de las tres puertas que hay en las diferentes secciones para asi, poder avanzar y llegar al objetivo final del juego.
+
+Para el comportamiento de choque contra la pared, el cual tendrás que realizar para pasar a la siguiente sección utilizaremos el componente Kinema.js que nos proporciona las físicas necesarias para esto. 
+
+El recorrido creado es muy sencillo y presentas las siguientes fases:
+
+\begin{itemize}
+    \item Cuando entramos en el juego nos encontramos con la primera sección de tres puertas a adivinar, además, si giramos la cámara nos encontramos con las instrucciones del juego.
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/mini.png}
+  \caption{Incio minijuego}\label{scrum}
+\end{figure}
+    \item Tras esto nos encontramos con tres secciones en las cuales debemos adivinar la puerta para poder avanzar a la siguiente. La manera que tenemos de pasar a la siguiente sección es empujando la puerta, si es la puerta correcta, dicha puerta caerá y podras pasar a la siguiente.
+     \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/suelo.png}
+  \caption{Situación siguiente sección}\label{scrum}
+\end{figure}
+    \item Por ultimo tras adivinar todas la puertas, nos encontramos con el objetivo principal del juego, pulsar el botón de la victoria, al cual solo se puede llegar atravesando las puertas. Tras pulsar este botón, el texto que se encuentra en la parte superior te indicará que has ganado.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/last.png}
+  \caption{Parte final minijuego}\label{scrum}
+\end{figure}
+
+\end{itemize}
+
+En cuanto al código creado para este minijuego , cabe destacar lo siguiente:
+\begin{verbatim}
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/
+v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/
+v5.0.0/dist/aframe-extras.min.js"></script>
+<script src="components/kinema.js"></script>
+\end{verbatim}  
+Estas líneas de código localizadas en el elemento \begin{verbatim}
+<head>
+\end{verbatim} son componentes que nos permiten utilizar distintas funcionalidades que aplicaremos en nuestro minijuego, como puede ser la creación de distintas entidades o la utilización de físicas, las que utilizaremos para chocar con las puertas al adivinarlas.
+
+Otra línea de código interesante es:
+\begin{verbatim}
+<a-box dynamic-body position="0 7.5 15" width="2.3" height="5" 
+depth="0.5">
+<a-text value="2" color="black" position="-0.1 0 0.5" rotation="0 0 0" 
+scale="1 1 1"></a-text>
+</a-box>
+<a-box static-body position="-5 7.5 15" width="2.3" height="5" 
+depth="0.5">
+<a-text value="1" color="black" position="-0.1 0 0.5" rotation="0 0 0" 
+scale="1 1 1"></a-text>
+</a-box>
+\end{verbatim} 
+Esta parte de código se trata de una parte de la creacíon de las puertas que tienes que elegir, estas, utilizan un componente que proporciona el comportamiento de una entidad fija o movible.\begin{verbatim}dynamic-body/static-body \end{verbatim}
+
+Por útlimo cabe destacar un sencillo componente creado por mí, cuya función es el cambio del texto al pulsar en una entidad.Este texto muestra al usuario que ha conseguido el objetivo del minijuego.  este era realmente el objetivo del sprint la creación de una entidad que reaccionara a un evento.
+\begin{verbatim}
+AFRAME.registerComponent('nowinnertowinner', {
+schema: {
+    event: {type: 'string', default: 'click'},
+},
+init: function () {
+    this.eventHandlerClick = function () {
+        let text = document.getElementById('WinnerTxt');
+        let value = text.getAttribute("value");
+        if( value === "Pulsa el boton para ganar"){
+            text.setAttribute('value', 'Enhorabuena!!')
+            text.setAttribute("scale",{x:3,y:3,z:3});
+            text.setAttribute('textwinner', 'Winner');
+        }else{
+            text.setAttribute('value','Pulsa el boton para ganar')
+            text.setAttribute("scale",{x:1,y:1,z:1});
+            text.setAttribute('textwinner','noWinner');
+        }
+    };
+},
+\end{verbatim} 
+
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/lastwin.png}
+  \caption{Minijuego completado}\label{scrum}
+\end{figure}
+
+\subsection{Resultado}
+En este primer sprint aprendí las posibilidades que nos puede dar a-frame y a hacerme una idea de como plantear el resto del proyecto, de manera paralela fui aprendiendo a utilizar javascript ya que era una tecnogía no antes usada. Este minijuego se encuentra en el repositorio del proyecto y esta accesible a cualquier persona tanto a la interfaz del juego\footnote{\url{https://julianperezm.github.io/A-frame/FirstExercise/FirstExercise.html}}  como al código\footnote{\url{https://github.com/julianperezm/A-frame/tree/master/FirstExercise}} . Tras esto, se mantuvo la correspondiente reunión con el scrum master en la cual se pone en común lo aprendido y se plantea el siguiente sprint.
+
+\section{Sprint 1}
+En este sprint seguiremos aprendiendo  el uso de A-Frame y JavaScript, aunque a partir de este sprint se construira nuestra apliación final por lo que podemos decir que este sprint es la base de nuestro proyecto. 
+\subsection{Objetivo}
+El objetivo de este sprint es la creación de un menú con las cuatro formas básicas de a-frame (plano, cubo, cilindro y esfera). las cuales las podremos seleccionar y apareceran en un lugar determinado de la escena. Para la creacíon de estas acciones utilizaremos tanto elementos HTML como componentes creados en JavaScript.
+
+\subsection{Desarollo}
+Algunos sprints los separaremos en tareas para así organizar mejor este y poder así trabajar lo más eficiente posible. Esto en la metodología scrum, se denomina, bolsa de tareas.
+
+\textbf{Tarea 1}
+
+La primera se tratá de simplificar el funcionamiento de lo que queremos en este sprint, por lo que crearemos un botón que crea una figura en la escena. 
+Esta primera escena contara con un podium donde aparecera la figura y unn botón el cual creará la figura, más adelante ese botón se converitra en las cuatros figuras básicas que al pulsarla mediante el cursor se crean en la escena.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/1.png}
+  \caption{Inicio primer ejercicio}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 2}
+
+En esta tarea con el fin de crear una interfaz mas amigable y mas funcional, el objetivo era que el menu se moviese para que la figura a la elegir fuera mas accesible. utilizaremos el atributo animación para la creaciópn de la misma.
+\begin{verbatim}
+ baseMenu.setAttribute('animation', 'property:rotation;to:0 360 0;
+ loop:true;dur:10000')   
+\end{verbatim}
+
+Tras estas dos tareas de iniciación del proyecto, se tuvo una reunion con el scrum master para saber si se iba por el buen camino, y para terminar de aclarar las siguientes tareas.
+
+\textbf{Tarea 3}
+
+En esta tarea seguimos con la funcionalidad de crear una interfaz mas amigable y pulsar una figura con el cursor de aframe no lo era mucho. por lo que creamos una interacción con la figura clickando directamente en ellas. A su vez también cambiamos el aspecto del escenario para que fuera mas vistoso al usuario.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/2.png}
+  \caption{Escena inicial con mejora en la interfaz}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 4}
+
+Para seguir adelante con la creación del editor, en esta tareas nos centraremos en en la funcionalidad, la cual permitirá que las figuras puedan ser arrastradas a cualquier lugar de la escena y que cada una tenga una mini previsualización de distintos colores encima de dicha figura.          \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/3.png}
+  \caption{Figura creada en la escena}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 5}
+Por útlimo en esta tarea se empieza a jugar con la creación de modelos en 3d con el formato gltf explicado anteriormente. Insertamos en la escena un dispositivo movil y u ordenador a modo de decoración.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/4.png}
+  \caption{Modelos 3D en la escena}\label{scrum}
+\end{figure}
+
+\subsection{Resultado}
+En este sprint se ha puesto la primera piedra de lo qeu sera nuestro editor, hemos creado algunas funcionalidades que nos seran muy utiles en el futuro. Toda esta implentación se encuentra en el repositorio del proyecto en github, esta accesible tanto al codigo (link) HTML o JavaScript como a la escena en el navegador(link)
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DISEÑO E IMPLEMENTACIÓN %
