@@ -32,7 +32,7 @@
 \usepackage{latexsym}  %% Logo LaTeX
 
 \title{Virtual reality editor for virtual reality scenes}
-\author{Julian A. Perez Muñoz}
+\author{Julián A. Pérez Muñoz}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -42,33 +42,43 @@
 \renewcommand{\appendixname}{Apéndice}
 
 \cleardoublepage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCCIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
 \chapter{Introducción}
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este capítulo realizaré una breve presentación del proyecto, tratatando objetivos tanto generales como específicos, y a su vez, aplicando un contexto sobre este y sobre las causas que nos ha llevado a realizar dicho trabajo. 
+El fin de este proyecto es la construcción de un editor de escenas en realidad virtual que sea accesible y usable tanto desde un navegador web como desde otras herramientas creadas para ello, como pueden ser, las gafas de realidad virtual.
 
-El fin que tratamos de perseguir con este proyecto es la construcción de un editor de escenas en realidad aumentada que sea usable tanto desde el navegador como desde otras herramientas creadas para ello, como pueden ser, las gafas de realidad virtual.
+Hace un tiempo, la creación de escenarios en realidad virtual, necesitaba un hardware específico, pero hoy en día tenemos tecnologías que más adelante desarrollaremos como puede ser WebGL que permiten crear este tipo de aplicaciones y nos posibilita el uso de estas en varios dispositivos, hasta en un dispositivo móvil.
 
-Para la realización de las escenas en realidad virtual, hemos trabajado con el framework, A-Frame. Acompañado por otras tecnologias que ayudan a completar la creación de dichos escenarios como pueden ser JavaScript o HTML, más adelante profundizaremos sobre ellas.
+La creación de estas escenas se han realizado basándonos en el framework de creación de experiencias en realidad virtual, A-Frame, una de las principales características de esta, es que nos permite la creación de la escena de una manera sencilla como es, añadiendo elementos HTML. 
+
 \section{Contexto}
 \label{sec:contexto}
-Antes de comenzar con los objetivos, paso a explicar el contexto del trabajo, y la motivación para la creación del mismo.
 
-Hoy en día el poder de la realidad aumentada y realidad virutal es cada vez mayor, de hecho, las compañias más importantes del mundo como son Google, Apple, Facebook o Microsoft ya llevan trabajando en ellas desde hace bastante tiempo. Aunque el poder de esta tecnología sea cada vez mayor, se trata de una tecnología en desarrollo, este es uno de los motivos que me alentó a empezar este proyecto.
+Como he comentado, hace un tiempo, El uso y la creación de aplicaciones de realidad aumentada, virtual o mixta sin las herramientas adecuadas se hacía impensable, pero gracias al aumento de popularidad que se ha producido hoy en día de estas aplicaciones, ha permitido la creación de diferentes softwares que permiten a parte de la creación en sí de la aplicación, la posibilidad de que estas sean cada vez mas eficientes, accesibles y usuales.
 
-Algunas de las acciones que podemos realizar gracias a esta tecnología y por la cual es tan interesante y crea tanta expectación son la construcción de distintas escenas mediante el uso de figuras en 3D y  manipulación de otros objetos como pueden ser, gltfs, o el poder locarlizarse en distintos lugares de manera inmediata.
+Gracias a este interés, las compañías más importantes del mundo como son Google, Apple, Facebook o Microsoft se han centrado en la compra de empresas pequeñas que se basan en la creación de este software como pueden ser Oculus VR comprada por facebook. 
 
-Lo peculiar de este proyecto es la intención de incorporar una innovación a estas acciones, la posibilidad de trabajar en la propia realidad virtual.
+La manipulación de modelos 3D y la creación de distintas escenas es una de los campos más interesantes de esta tecnología. Aplicaciones como Blender, AutoCAD o Spoke by Mozilla se centran en estas ideas pero ninguna de estas trabajan en la propia realidad virtual, por ello le quisimos incorporar una innovación a nuestro editor de escenas, la posibilidad de trabajar en la propia realidad virtual.
 
-Para terminar, cabe destacar que, a parte de las ya nombradas anteriormente,esta tecnologia es usada en otros ambitos como pueden ser simuladores, museos o medicina. En este útlimo podemos hablar sobre nixi for children, un personaje creado en realidad aumentada que ayuda a los niños a prepararse para la cirugía, como este, muchos más.
+Otros muchos sectores se aprovechan de esta tecnología, desde la creación de  simuladores, videojuegos y museos hasta en la medicina.
 
-Del mismo modo mi proyecto también puede ser aplicado a diferentes ambitos, tanto profesionales como pueden ser el mundo de la arquitectura o el diseño, hasta personales, como simple ocio.
+Si nos centramos en mi aplicación esta también puede ser usada en distintos entornos, tanto profesionales como pueden ser el mundo de la arquitectura o el diseño, hasta personales, como simple ocio.
+
+Como consecuencia de todo lo anterior, podemos observar que el poder de esta tecnología es cada vez mayor pero se trata aún de una tecnología en desarrollo. Por lo que me alentó a empezar con este proyecto y contribuir en este largo camino.
 
 \section{Objetivo general}
 \label{sec:objetivo general}
 
-Como ya he adelantado anteriormente, el objetivo principal de este proyecto es la creación de un editor de escenas para realidad aumentada. Gracias a las diversas funcionalidades, que describiré más adelante, la aplicación va a permitir poder crear cualquier figura o escena que puedas imaginar. Desde grandes escenas con varias figuras de gran tamaño, como pueden ser un conjunto de edificios hasta un escenario con una figura de lo más insignificante como puede ser un elemento de construcción de dicho edificio, un tornillo. Buscamos realizar todo esto de una manera sencilla y con una interfaz de usuario agradable e intutiva.
+El objetivo principal de este proyecto es la creación de un editor en realidad virtual para escenas de realidad virtual, que este funcione en un modo de escritorio mediante el navegador web y en diferentes herramientas de realidad virtual. Buscamos realizar este editor basándonos en principalmente en la tecnología A-Frame de una manera sencilla y con una interfaz de usuario agradable e intuitiva.
 
 \section{Objetivos específicos}
 \label{sec:Objetivos específicos}
@@ -76,17 +86,14 @@ Como ya he adelantado anteriormente, el objetivo principal de este proyecto es l
 A continuación paso a especificar los distintos objetivos que tenemos para realizar este proyecto al que mas adelante daremos solución. 
 
 \begin{itemize}
-  \item La aplicación debe funcionar en el navegador web.
-  \item La aplicación debe funcionar en las gafas de realidad virtual.
   \item El editor de escenas debe tener una página principal
   \item El editor de escenas debe tener una página de instrucciones.
   \item El editor de escenas debe tener la propia pagina donde poder crear, editar figuras en la escena.
   (Estas tres a lo mejor puedo ponerlo en una.)
-  \item El editor contará con un menú, desde el cual podrá crear diferentes figuras, pueden ser figuras básicas como gltfs.
+  \item El editor contará con un menú, desde el cual podrá crear diferentes figuras, pueden ser figuras básicas como glTFs.
   \item Todas estas figuras podrán ser modificadas tanto en orientación, rotación, colores, y en material.
-  \item El editor debera contar con un botón que le permita acceder la funcionalidad "Modo grupo", que permita unir figuras para crear una sola como conjunto de varias, manejadas por un "manejador".
-  \item El usuario podrá esconder los manejadores mediante un botón en la escena.  
-  \item En el editor nos encontraremos un botón para cambiar a distintos ambientes.
+  \item El editor deberá contar con un botón que le permita acceder la funcionalidad "Modo grupo", que permita unir figuras para crear una sola como conjunto de varias, manejadas por un "manejador".
+  \item El usuario podrá esconder los manejadores mediante un botón en la escena.  \item En el editor nos encontraremos un botón para cambiar a distintos ambientes.
   \item El usuario podrá moverse por el escenario, tanto en la versión web como en la de realidad aumentada.
   \item El código de la aplicación y el acceso a los diferentes ejemplos estarán disponibles en la plataforma GitHub.
 \end{itemize}
@@ -96,10 +103,614 @@ A continuación paso a especificar los distintos objetivos que tenemos para real
 En esta sección voy a describir la estructura de la memoria para una mejor 
 comprensión sobre la misma.
 \begin{itemize}
-\item Primer capítulo, introduccion.En este apartado se realiza una breve descripción del proyecto añadiendole un contexto y presentando los objetivos generales y específicos del trabajo.
-\item Segundo capítulo, estado del arte y tecnologías utilizadas. Donde se describe las tecnologías que hemos usado para la correcta realización del proyecto.
-\item Tercer capítulo, Desarollo del proyecto, Ponemos de manifiesto los diferentes procesos que hemos seguido para la realización de este, exponiendo tanto los problemas que han ido surgiendo como las soluciones utilizadas.
-\item Cuarto capítulo, Resultado final. En este capitulo creo un manual de usuario para ampliar el modo de uso de la aplicación, tambien describo de una manera mas técnica los componentes que hemos utilizado para la realización de la misma.
-\item Quinto capítulo, conclusiones. Analizaremos los objetivos que teniamos marcados y como hemos llegado hasta ellos, exponiendo problemas y soluciones.
+\item Primer capítulo, introducción.En este apartado se realiza una breve descripción del proyecto añadiéndole un contexto y presentando los objetivos generales y específicos del trabajo.
+\item Segundo capítulo, estado del arte y trabajos relacionados. Donde se describe las tecnologías que hemos usado para la correcta realización del proyecto.
+\item Tercer capítulo, Desarrollo del proyecto, Ponemos de manifiesto los diferentes procesos que hemos seguido para la realización de este, exponiendo tanto los problemas que han ido surgiendo como las soluciones utilizadas.
+\item Cuarto capítulo, Resultado final. En este capitulo creo un manual de usuario para ampliar el modo de uso de la aplicación, también describo de una manera mas técnica los componentes que hemos utilizado para la realización de la misma.
+\item Quinto capítulo, conclusiones. Analizaremos los objetivos que teníamos marcados y como hemos llegado hasta ellos, exponiendo problemas y soluciones.
 \end{itemize}
+
+\cleardoublepage % empezamos en página impar
+\chapter{Estado del arte y trabajos relacionados} % título del capítulo (se muestra)
+\label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
+En este proyecto se han utilizado diversas tecnologías tanto para la creación del mismo como para su correcto funcionamiento, Las tecnologías son las siguientes:
+
+\section{WebGL} % título de sección (se muestra)
+\label{sec:WebGl}
+WebGL~\cite{webGl} es una tecnología propuesta por Vladimir Vukicevic \footnote{\url{https://en.wikipedia.org/wiki/Vladimir_Vukićević}}, su trabajo comienza con la creación de un prototipo de OpenGL~\cite{openGL} para el elemento canvas de HTML, llamado Canvas 3D.
+
+Estaba originalmente basado en OpenGL ES 2.0, especificación creada para el iPhone y iPad, a medida que esta se iba desarrollando, su objetivo fue la usabilidad en distintos sistemas operativos y dispositivos. Utiliza el elemento canvas ya que es una evolución del Canvas 3D y se accede a este mediante el DOM. \footnote{\url{https://en.wikipedia.org/wiki/Document_Object_Model}}
+
+Esta API\footnote{\url{https://es.wikipedia.org/wiki/Interfaz_de_programación_de_aplicacione}} de gráficos 3D basada en OpenGL permite a los navegadores modernos renderizar escenas 3D de una manera estándar y eficiente. Esta idea abrió un universo de posibilidades en las web basadas en entornos 3D como son los videojuegos, visualización científica o imágenes médicas. 
+
+Los programas WebGL están escritos en en JavaScript y en Shading language, un lenguaje similar a C, C++. Por último, esta tecnología fue diseñada y es mantenida por el grupo, non-profit Khronos Group.
+
+WebGL es usado por mi aplicación a la hora de la creación de las figuras, mediante el framework A-Frame, a través de la tecnología Three.js.
+
+\section{WebXR} % título de sección (se muestra)
+\label{sec:WebXR}
+WebXR~\cite{webXR}, En sus inicios se denominaba VR. Con el objetivo de acceder a las principales capacidades de los dispositivos tanto de realidad aumentada (AR), de realidad virtual(VR) como de realidad mixta, el nombre VR, carecía de sentido ya que en cuanto a los dispositivos que englobaba, las siglas VR se quedaban cortas. Otra diferencia importante sobre esta evolución, es el soporte de controladores de entradas basado en la API gamepad\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API}}.
+
+Esta tecnología permite manejar el proceso de renderización de las vistas que simulan la experiencia 3D y proporciona los datos necesarios para actualizar las imágenes mostradas al usuario. Debemos tener claro que no es una tecnología de renderizado, WebGL te ayuda con esto.
+
+Los principales casos de uso de esta API son desde la visualización de objetos/datos hasta experiencias artísticas. 
+
+Esta tecnología es muy importante en el editor ya que permite la conexión entre las gafas de realidad virtual con la aplicación.
+
+\section{JavaScript} % título de sección (se muestra)
+\label{sec:JavaScript}
+
+JavaScript(JS)~\cite{eloquent} es el lenguaje de programación que se complementa con el lenguaje que más adelante explicaremos, HTML. Esta tecnología se suele utilizar para crear comportamientos dinámicos a la página web.
+
+JavaScript es un lenguaje que permite la construcción de objetos basada en prototipos\footnote{\url{https://es.wikipedia.org/wiki/Programación_basada_en_prototipos}}, esto ayuda al programador ha crear objetos no mediante el uso de  instancias de clases sino mediante la clonación de objetos. La sintaxis de Javascript con la intención de no complicar mucho este, es muy parecida a otros lenguajes como Java y C++.
+
+Centrándonos en las funcionalidades que ofrece este lenguaje, Javascript nos permite crear los comportamientos de los distintos elementos  HTML mediante el acceso al DOM, A continuación puedes ver un pequeño ejemplo de como realizar un hola mundo en JavaScript:
+
+\begin{verbatim}
+ <script>
+  document.write("Hola Mundo");
+</script>   
+\end{verbatim}
+
+Gracias a este lenguaje, puedes crear contenido de actualización dinámica con la creación de eventos, controlar multimedia o animar imágenes, por lo que HTML deja de ser un lenguaje estático.
+
+JavaScript se utiliza principalmente del lado del cliente como parte del navegador web. Si hablamos del lado del servidor podemos hablar de Node.js\footnote{\url{https://nodejs.org/es/}}, se trata de un entorno  en tiempo de ejecución basado en JS
+
+Gracias a la creación de diferentes eventos y  modificación de atributos  que nos permite esta tecnología, se han podido crear todas las funcionalidades de la aplicación.
+
+\section{Three.js} % título de sección (se muestra)
+\label{sec:Three}
+Three.js\footnote{\url{https://threejs.org}} fue creada por Ricardo Cabello en 2010 y hoy en día está alojado en GitHub.
+
+Esta tecnología es una biblioteca y una API escrita en JavaScript cuyo objetivo principal es crear y visualizar figuras en 3D. Esta tecnología usa WebGL y es capaz de mostrar las figuras en el navegador. Esta biblioteca tiene diversas características como son efectos, escenas, animaciones, materiales o sombreados. También soporta la realidad aumentada o virtual apoyándose en WebXR.
+
+A continuación puedes ver un ejemplo de un escena creada con Three.js
+\begin{figure}
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{img/threejs.png}
+  \caption{Escena creada con Three.js}\label{fig:three}
+\end{figure}
+
+Esta tecnología no solo sirve para la simple representación de las figuras de la escena si no que también es capaz de realizar ecuaciones matemáticas y crear matrices en la escena para dicha representación.
+
+Gracias a Three.js se pueden construir las figuras de las escenas del editor, ya que A-Frame utiliza Three.js para dicha creación.
+
+\section{HTML5} % título de sección (se muestra)
+\label{sec:HTML5}
+HTML~\cite{HTML} es uno de lo pilares fundamentales de este proyecto ya que es una de las tecnologías más usadas para la creación de este proyecto.
+
+HTML es un lenguaje de marcado utilizado en el desarrollo del contenido web. Suele estar acompañado por otras tecnologías que la complementan, en cuanto a apariencia, CSS, no muy utilizada en este proyecto y en cuanto a funcionalidad, JavaScript, muy utilizada en este trabajo.
+
+Una de las características de HTML es la utilización de marcas para etiquetar los distintos elementos del documento para luego mostrarlo en la web. Algunas de las etiquetas son: \begin{verbatim}<head>, <ul>, <p>, <span>.\end{verbatim} 
+
+Estas etiquetas permiten al elemento tener una gran versatilidad, estructura lógica y facilidad a la hora de entenderlo. Dentro de estas podemos encontrar los atributos\footnote{\url{https://es.wikipedia.org/wiki/Atributo_HTM}} que son utilizados para controlar el comportamiento de dicha etiqueta.
+
+Un ejemplo básico de un documento HTML puede ser el siguiente:
+
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TFG Julián</title>
+  </head>
+  <body>
+    <p>Hola mundo!</p>
+  </body>
+</html>
+\end{verbatim}
+
+Cuando hablamos de HTML es importante destacar el DOM, es la estructura de todos elementos del documento organizados en nodos, el conjunto de todos estos se denomina árbol de nodos. Gracias al DOM y al lenguaje JavaScript podremos acceder a los elementos para un libre utilización de ellos. Esta estructura es guardada en memoria por los navegadores y de este modo poder mostrar la página web al usuario.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/1200px-DOM-model.svg.png}
+  \caption{Visualización gráfica del DOM}\label{html}
+\end{figure}
+
+Para terminar, destacar que ahora mismo HTML se encuentra en su versión HTML5, publicada en 2014, donde se añadieron varias nuevas funcionalidades como la inclusión de nuevas etiquetas o la compatibilidad con varias APIS con Canvas o WebGL.
+
+En el editor de escenas, el framework, A-Frame, nos permite crear elementos mediante el lenguaje HTML.
+
+\section{A-Frame} % título de sección (se muestra)
+\label{sec:A-Frame}
+
+Esta tecnología fue desarrollada por el equipo de mozilla VR durante 2015. El objetivo principal de estos era permitir crear dichas escenas directamente en HTML sin conocer WebGL. A parte de esta, también usa otras tecnologías anteriormente explicadas como son WebXR y JavaScript.
+
+A-frame~\cite{a} es la tecnología más importante de este proyecto, ya que es la base fundamental de este. A-frame es un framework creado para la construcción de experiencias en realidad virtual, basado en HTML, por lo que como hemos dicho antes, es un lenguaje bastante sencillo e intuitivo. Una de las características claves de A-frame es el framework entidad-componente para Three.js.
+
+Un ejemplo de creación de figuras en A-frame mediante HTML puede ser el siguiente:
+\begin{verbatim}
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js">
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3"></a-box>
+      <a-sphere radius="1.25"></a-sphere>
+      <a-cylinder color="#FFC65D"></a-cylinder>
+      <a-planewidth="4" height="4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
+\end{verbatim}
+El resultado en la página web de este código, es el siguiente:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/aframe.png}
+  \caption{Escena básica A-Frame}\label{aframe}
+\end{figure}
+Explicando un poco mas sobre el código del escenario de ejemplo, podemos destacar: 
+\begin{itemize}
+    \item La inclusión de las dependencias de A-Frame en el elemento Head, esto nos permite usar todos los elementos de esta tecnología.
+    \item La creación de las diferentes figuras mediante sus respectivas etiquetas.
+    \item Modificación de ciertos aspectos de las figuras mediante los atributos.
+\end{itemize}
+Profundizando un poco más sobre la relación entidad-componente, Una entidad es el objeto en sí creado mediante HTML y el componente es el comportamiento que le podemos asignar a dicha figura, estos se realiza en el JavaScript. 
+
+Estos componentes siguen una estructura estandarizada, algunos son elementos de dicha estructura son: schema, propiedades del componente, init, parte del componente que se ejecuta al iniciar el componente. La manera correcta de incluir un componente a la escena es añadírselo al elemento como si de un atributo se tratara.
+
+En mi aplicación, el uso de A-Frame ha sido fundamental, tanto para la creación de figuras, iluminación, cámara del usuario como para el comportamiento de estos.
+
+\section{GitHub} % título de sección (se muestra)
+\label{sec:GitHub}
+GitHub~\cite{GITHUB} es una plataforma de almacenamiento y administración  de software, Este sistema está basado en el control de versiones \footnote{\url{https://es.wikipedia.org/wiki/Control_de_versiones}} y en Git \footnote{\url{https://git-scm.com}}.
+
+Gracias al control de versiones, el desarrollador puede administrar y llevar un registro de cualquier modificación sobre el proyecto. Este sistema permite al desarrollador trabajar de una forma segura mediante las ramas. Las ramas te permiten duplicar el código fuente, donde puede hacer cambios sin afectar al proyecto "principal". Puedes fusionar las distintas ramas si lo deseas.
+
+En cuanto a Git, se trata de un sistema de control de versiones, es decir, te ayuda a controlar lo anterior explicado pero mediante el terminal del ordenador.
+
+GitHub es una interfaz gráfica de Git el cual nos ofrece distintas funcionalidades como pueden ser, la creación de un usuario, la creación de distintos proyectos(repositorios) los cuales modificar desde la propia interfaz web, capacidad de trabajar en repositorios creados por otros desarrolladores mediante un fork\footnote{\url{https://es.wikipedia.org/wiki/Bifurcación_(desarrollo_de_software)}} o la modificación del mismo mediante un pull, creación de un foro en los que los desarrolladores pueden expresar dudas/problemas sobre el proyecto, etc.
+
+Hoy en día según los desarrolladores  el 87\% de estos utilizan GitHub.
+
+Para el desarrollo de mi aplicación GitHub ha sido la plataforma donde he alojado el código del mismo. También para el despliegue de esta, he utilizado GitHub pages, una funcionalidad de la página que te permite desplegar tus aplicaciones.
+
+\section{PyCharm} % título de sección (se muestra)
+\label{sec:GitHub}
+Se trata de un entorno de desarrollo integrado (IDE) que se utiliza para la programación, es un software creado por la compañía JetBrains~\cite{jetbrains}.
+
+Este software es multiplataforma adaptado para Windows, macOS y Linux. Ha sido utilizado para la creación de este proyecto y por eso es una parte fundamental de esto.
+
+Tiene infinidad de ventajas entre las que están:
+
+\begin{itemize}
+    \item Asistencia y análisis de codificación, con ayuda a la finalización del código, sintaxis y resaltado de errores.
+    \item Navegación entre proyectos y ficheros.
+    \item Acceso a la ejecución del código en el navegador mediante accesos directos.
+\end{itemize}
+
+PyCharm proporciona una API para que los desarrolladores puedan crear distintos plugins y de este modo se pueda crear código de manera más fácil y eficiente.
+
+Ha sido la herramienta utilizada para la creación del código del editor.
+
+\section{LaTeX} % título de sección (se muestra)
+\label{sec:Latex}
+LaTeX está basado en Tex\footnote{\url{https://es.wikipedia.org/wiki/TeX}}, programa destinado a la creación de documentos que contienen textos y fórmulas matemáticas. Este programa no es un editor de textos, si no, un procesador de macros.
+
+LaTeX es un conjunto de macros para Text, cuyo objetivo principal es la alta composición tipográfica. Está orientando a la producción y creación de documentos científicos y se ha estandarizado para la creación de los mismos.
+
+Esta tecnología nos presenta diversas ventajas entre las que se encuentran la facilidad de gestionar las referencias, bibliografías, etc, es un sistema multiplataforma, puedes componer fórmulas con calidad de imprenta o la capacidad de exportar el documento a PDF. La creación de dichos documentos puede ser al principio, un poco complicado si no se conoce la herramienta.
+
+Se trata de un software libre bajo la licencia LPPL\footnote{\url{https://es.wikipedia.org/wiki/LaTeX_Project_Public_License}} 
+
+Este sistema ha sido fundamental a la hora de crear este proyecto ya que esta memoria esta creada utilizando LaTeX.
+
+\section{glTF} % título de sección (se muestra)
+\label{sec:Gltfs}
+Este formato de archivo tiene como objetivo principal escenas y modelos en 3D y esta basado en el formato de texto sencillo para el intercambio de datos, JSON. Popularmente se le describe como como el JPEG en 3D.
+
+Este formato esta creado para una eficiente distribución de objetos y escenas en 3D, disminuyendo el tiempo de procesamiento en ejecución. Este formato se puede usar en aplicaciones que usan la tecnología anteriormente explicada, WebGL.
+
+Es importante explicar este formato, ya que la aplicación que he creado te permite el manejo y  modificación de este formato en la aplicación.
+
+\section{Trabajos relacionados} % título de sección (se muestra)
+\label{sec:Otros}
+Cabe destacar algunos editores que han servido como inspiración para la creación de mi editor como son Blender, centrado en aspectos como la renderización, creación de gráficos en 3D o Unity centrado en creación del motor gráfico en videojuegos. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ESTADO DEL ARTE %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Desarrollo del proyecto}
+\label{chap:Desarrollo del proyecto}
+Centrándonos en el desarrollo del proyecto debemos comenzar explicando la metodología SCRUM~\cite{proyectos} ya que hemos seguido una metodología muy similar para la creación de este proyecto.
+
+Está metodología, oficialmente surgió en 1995 presentado por Ken Schwaber y Jeff Sutherland mediante "SCRUM Development Process". Aunque esta fuera la fecha oficial, este modelo ya se había dejado ver en los años 80.
+
+SCRUM es un metodología que está centrada en el desarrollo ágil\footnote{\url{https://es.ryte.com/wiki/Desarrollo_Ágil_de_Software}}  de software, aunque he realizado el proyecto de manera individual esta metodología se suele aplicar de manera colectiva con la participación en equipo con el objetivo de obtener el mejor resultado posible.
+
+En Scrum se pueden diferenciar distintos roles, Scrum Master, Product owner y el equipo. El rol de SCRUM Master en este caso esta representado por el tutor del proyecto cuya función es facilitar y ayudar a gestionar el trabajo. En este caso el product owner no tiene un papel importante y respecto al equipo está representado por mí, el alumno que realiza este proyecto, y su función es el desarrollo y la entrega de las distintas tareas organizadas en cada sprint.
+
+Los sprints tratan de distintos periodos de tiempo en el cual el equipo, en este caso yo, me centro en la realización de las tareas marcadas. Estos sprint se inician con un reunión Scrum Master - equipo en la cual se fijaba unos objetivos y se marcaban los pasos a seguir para la consecución de dichos objetivos. Tras un tiempo trabajando en el sprint se emplaza otra nueva reunión en la cual se comparte la tarea terminada y los problemas que han ido surgiendo durante esta. En esta misma reunión el equipo prepara un versión funcional de la aplicación o tarea y se marcan los siguientes pasos a seguir. 
+
+Podemos ver más en detalle el proceso en la siguiente imagen:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/Scrum.jpg}
+  \caption{Estructura metodología Scrum}\label{scrum}
+\end{figure}
+
+\section{Sprint 0} % título de sección (se muestra)
+\label{sec:sprint0}
+En este primer sprint el Scrum Master comenzó a introducir las principales tecnologías que iban a ser usadas en el proyecto, A-frame, JavaScript y HTML. Por lo que en este sprint me dedique a realizar una actividad que asentará la unión entre ambas tecnologías.
+
+\subsection{Objetivo}
+El objetivo principal de este Sprint es empezar a usar A-Frame para poder así poder introducirme en la tecnología y aprender como utilizarla. la creación de distintas entidades, eventos, componentes y físicas son los principales objetivos. En este sprint tenemos que tener en cuenta que una de las principales tecnologías utilizadas, JavaScript, era nueva para mí, por lo que también tuve que aprender sobre esta. Para consolidar todo lo anterior la tarea a realizar fue la creación de un mini juego en el cual crear un componente y que este, reaccionara a un evento.
+
+\subsection{Desarrollo}
+Todo comienza haciéndose una idea de que va a tratar el mini juego, que componente vamos a crear y que comportamiento le vamos a dar.
+
+La base fundamental del mini juego será un recorrido en el cual debes adivinar una de las tres puertas que hay en las diferentes secciones para así, poder avanzar y llegar al objetivo final del juego.
+
+Para el comportamiento de choque contra la pared, el cual tendrás que realizar para pasar a la siguiente sección utilizaremos el componente Kinema.js que nos proporciona las físicas necesarias para esto. 
+
+El recorrido creado es muy sencillo y presentas las siguientes fases:
+
+\begin{itemize}
+    \item Cuando entramos en el juego nos encontramos con la primera sección de tres puertas a adivinar, además, si giramos la cámara nos encontramos con las instrucciones del juego.
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/mini.png}
+  \caption{Incio mini juego}\label{scrum}
+\end{figure}
+    \item Tras esto nos encontramos con tres secciones en las cuales debemos adivinar la puerta para poder avanzar a la siguiente. La manera que tenemos de pasar a la siguiente sección es empujando la puerta, si es la puerta correcta, dicha puerta caerá y podrás pasar a la siguiente.
+     \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/suelo.png}
+  \caption{Situación siguiente sección}\label{scrum}
+\end{figure}
+    \item Por último tras adivinar todas la puertas, nos encontramos con el objetivo principal del juego, pulsar el botón de la victoria, al cual solo se puede llegar atravesando las puertas. Tras pulsar este botón, el texto que se encuentra en la parte superior te indicará que has ganado.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/last.png}
+  \caption{Parte final mini juego}\label{scrum}
+\end{figure}
+
+\end{itemize}
+
+En cuanto al código creado para este mini juego , cabe destacar lo siguiente:
+\begin{verbatim}
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/
+v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/
+v5.0.0/dist/aframe-extras.min.js"></script>
+<script src="components/kinema.js"></script>
+\end{verbatim}  
+Estas líneas de código localizadas en el elemento \begin{verbatim}
+<head>
+\end{verbatim} son componentes que nos permiten utilizar distintas funcionalidades que aplicaremos en nuestro mini juego, como puede ser la creación de distintas entidades o la utilización de físicas.
+
+Otra línea de código interesante es:
+\begin{verbatim}
+<a-box dynamic-body><a-text></a-text></a-box>
+<a-box static-body><a-text></a-text></a-box>
+\end{verbatim} 
+
+Esta parte de código  trata de una parte de la creación de las puertas que tienes que elegir, estas, utilizan un componente que proporciona el comportamiento de una entidad fija o movible.\begin{verbatim}dynamic-body/static-body \end{verbatim}
+
+Por ultimo cabe destacar un sencillo componente creado por mí, cuya función es el cambio del texto al pulsar en una entidad.Este texto muestra al usuario que ha conseguido el objetivo del mini juego.  Este era realmente el objetivo del sprint la creación de una entidad que reaccionara a un evento.
+
+La estructura de un componente es la siguiente:
+\begin{verbatim}
+AFRAME.registerComponent('nowinnertowinner', {
+schema: {
+},
+init: function () {
+
+},
+\end{verbatim} 
+
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/lastwin.png}
+  \caption{Mini juego completado}\label{scrum}
+\end{figure}
+
+\subsection{Resultado}
+En este primer sprint aprendí las posibilidades que nos puede dar a-frame y a hacerme una idea de como plantear el resto del proyecto, de manera paralela fui aprendiendo a utilizar JavaScript ya que era una tecnología no antes usada. Este mini juego se encuentra en el repositorio del proyecto y esta accesible a cualquier persona tanto a la interfaz del juego\footnote{\url{https://julianperezm.github.io/A-frame/FirstExercise/FirstExercise.html}}  como al código\footnote{\url{https://github.com/julianperezm/A-frame/tree/master/FirstExercise}} . Tras esto, se mantuvo la correspondiente reunión con el SCRUM Master en la cual se pone en común lo aprendido y se plantea el siguiente sprint.
+
+\section{Sprint 1}
+A partir de este sprint se empezará a construir nuestra aplicación final por lo que podemos decir que este sprint es la base de nuestro proyecto. 
+\subsection{Objetivo}
+El objetivo de este sprint es la creación de un menú con las cuatro formas básicas de a-frame (plano, cubo, cilindro y esfera). las cuales las podremos seleccionar y aparecerán en un lugar determinado de la escena. Para la cremación de estas acciones utilizaremos tanto elementos HTML como componentes creados en JavaScript.
+
+\subsection{Desarrollo}
+Algunos sprints los separaremos en tareas para así organizar mejor este y poder así trabajar lo más eficiente posible.
+
+\textbf{Tarea 1}
+En esta primera tarea crearemos un menú con cuatros figuras básicas.
+Para que las figuras aparezcan en el escenario, hay que clicar las figuras en el menú.
+El resultado de esta tarea se puede visualizar en la figura 3.6
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/1.png}
+  \caption{Inicio primer ejercicio}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 2}
+
+En nuestro camino hacia el objetivo añadiremos movimiento al menú para hacerlo más accesible al usuario, utilizaremos el atributo  de animación para la creación de la tarea.
+\begin{verbatim}
+ baseMenu.setAttribute('animation', 'property:rotation;to:0 360 0;
+ loop:true;dur:10000')   
+\end{verbatim}
+
+\textbf{Tarea 3}
+
+En esta tarea seguimos con la funcionalidad de crear una interfaz más amigable y pulsar una figura con el cursor de A-Frame no lo era. Por lo que creamos una interacción con la figura clicando directamente en ellas. A su vez también cambiamos el aspecto del escenario para que fuera mas vistoso al usuario. Como se puede ver en la figura 3.7.
+         \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/2.png}
+  \caption{Escena inicial con mejora en la interfaz}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 4}
+
+Para seguir adelante con la creación del editor, en esta tarea nos centraremos en la funcionalidad, la cual permitirá que las figuras puedan ser arrastradas a cualquier lugar de la escena y que cada una tenga una mini previsualización de distintos colores encima de ella.          \begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/3.png}
+  \caption{Figura creada en la escena}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 5}
+
+Por ultimo en esta tarea se empieza a jugar con la creación de modelos en 3d con el formato glTF explicado anteriormente. Insertamos en la escena un dispositivo móvil y un ordenador a modo de decoración, como se observa en la figura 3.9.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/4.png}
+  \caption{Modelos 3D en la escena}\label{scrum}
+\end{figure}
+
+\subsection{Resultado}
+En este sprint se dio el primer paso de lo que será nuestro editor, se comienza con la creación de algunas de las funcionalidades finales de la aplicación. Toda esta implementación se encuentra en el repositorio del proyecto en GitHub,tanto al código \footnote{\url{https://github.com/julianperezm/A-frame/tree/master/ThirdExercise}} HTML o JavaScript como a la escena en el navegador\footnote{\url{https://julianperezm.github.io/A-frame/ThirdExercise/ThirdExercise.html}}
+
+\section{Sprint 2}
+En este sprint tras haber empezado nuestro proyecto, nos centraremos en distintas funcionalidades y la mejora de la interfaz de la aplicación.
+
+\subsection{Objetivo}
+Nos centraremos en tres objetivos principales, 
+
+\begin{itemize}
+    \item La modificación de una propiedad concreta de las figuras, el tamaño.
+    \item Una de las funcionalidades principales de la aplicación, la creación de un modo grupo de figuras.
+    \item La mejora de la interfaz de la aplicación para que sea mas usable en 3D.
+\end{itemize}
+
+\subsection{Desarrollo}
+Como en los casos anteriores separaremos el desarrollo del sprint en diferentes tareas.
+
+\textbf{Tarea 1}
+
+En esta tarea nos centraremos en la creación de la funcionalidad que llamaremos, modo grupo. Esta funcionalidad consiste en la unión de diferentes figuras que serán manejadas por otra que llamaremos, manejador. 
+
+Esta funcionalidad es útil por si queremos crear una figura que se base en la unión de varias. Él método por el que realizaremos esta funcionalidad es mediante la creación de distintos componentes. La manera de acceder a ella es pulsando la tecla q. 
+
+El resultado de esta tarea se puede observar en un panel creado en el escenario, cuando el modo grupo este activado se mostrará como se puede observar en la figura 3.11, del mismo modo cuando esté activado figura 3.10.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+ \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/single.png}
+  \caption{Modo grupo desactivado}\label{single}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+  \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/group.png}
+  \caption{Modo grupo activado}\label{scrum}
+  \end{minipage}
+\end{figure}
+
+\textbf{Tarea 2}
+
+Tras la creación de la funcionalidad, nos centraremos en la modificación de una de las propiedades de la figura. La modificación se centra en el tamaño, recordemos que anteriormente añadimos el poder cambiar el color de la figura.
+
+Esto lo realizaremos de una manera similar, crear distintas componentes que permitan modificar la escala de la figura, con una particularidad, podremos modificar la escala en los distintos ejes para así poder tener más posibilidades a la hora de crear diferentes figuras. 
+
+Esta tareas se puede visualizar en la escena mediante diferentes botones que se pueden ver en la figura 3.12 además de esto, podrás ver las medidas de la figura creada.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/tam.png}
+  \caption{Menú modificación figura}\label{scrum}
+\end{figure}
+
+\textbf{Tarea 3}
+
+En esta tarea nos centraremos en la mejora de la interfaz de la aplicación para que sea más usable y mas vistosa para el usuario. 
+
+Los paneles de información de la aplicación en lugar de ser planos se les dará un poco de profundidad, el menú de selección de figuras, pasará a ser en 3D para que sea mas intuitivo, para realizar este cambio se modifico el atributo de tamaño de todos los elementos del menú añadiéndoles profundidad.
+
+El resultado se puede observar en la figura 3.13
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/prof.png}
+  \caption{Nueva interfaz de la aplicación}\label{scrum}
+\end{figure}
+
+\subsection{Resultados}
+
+En este sprint hemos conseguido mejorar considerablemente nuestro editor, ya que hemos añadido una nueva funcionalidad, hemos añadido un método más de modificación de la figura y hemos mejorado el escenario para un uso mas fácil de este. Este sprint está disponible en el repositorio del proyecto en GitHub, tanto el código\footnote{\url{https://github.com/julianperezm/A-frame/tree/master/FifthExerciseV1}} como el escenario \footnote{\url{https://julianperezm.github.io/A-frame/FifthExerciseV1/FifthExercise.html}}.
+
+
+\section{Sprint 3}
+
+Tras el sprint anterior en este seguiremos mejorando la interfaz de usuario de la aplicación además de añadirle nuevas funcionalidades como la creación de nuevas figuras y la modificación de nuevos atributos de estas.
+
+\subsection{Objetivo}
+Para este sprint tenemos varios objetivos en los que centrarnos:
+\begin{itemize}
+    \item Mejora de la interfaz me centraré en distintos puntos como son las dimensiones del escenario y la visibilidad de distintos objetos.
+    \item Añadiremos la funcionalidad de poder añadir nuevas figuras con el formato glTF.
+    \item Compatibilizar la aplicación con las gafas de realidad aumentada.
+\end{itemize}
+
+\subsection{Desarrollo}
+Las tareas para este sprint son las siguientes:
+
+\textbf{Tarea 1}
+
+En esta tarea nos centraremos en la mejora de la interfaz de usuario. Rediseñaremos el escenario. Respecto del tamaño, lo haremos más pequeño, ya que anteriormente las figuras no tenían un tamaño acorde con el escenario.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/gen.png}
+  \caption{Escenario general}\label{gen}
+\end{figure}
+
+Las figuras que sean clicables se verá mas claro que se pueden clicar.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=7cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/figs.png}
+  \caption{Figura seleccionada}\label{scrum}
+\end{figure}
+
+Respecto al menú de creación de figuras y el modo grupo, haremos que sigan al usuario para se encuentre de una manera más accesible y escondida y de este modo, visualizar mejor el escenario. Respecto al menú de las figuras con ayuda de la creación de componentes, lo rediseñaremos para que se muestre de una manera más sencilla y vistosa y le añadiremos la posibilidad de poder esconderlo. También colocaremos de una manera más adecuada el menú de modificación de la figura. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/menu.png}
+  \caption{Menú modificación figura}\label{scrum}
+\end{figure}
+
+Respecto al modo grupo cambiaré varias cosas, la primera, el manejador ahora tiene una imagen especial para así poder diferenciarlo mejor.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=4cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/handler.png}
+  \caption{Manejador}\label{scrum}
+\end{figure}
+
+Y respecto de las figuras seleccionadas, ahora tendrán una animación al ser clicadas.
+
+\textbf{Tarea 2}
+
+En esta tarea, nos centraremos en añadir distintas figuras en 3D.
+
+Crearé un menú para estas figuras en las cuales podremos elegir entre distintas figuras las cuales están clasificadas por categorías. Para añadir estas figuras hemos utilizado el elemento \begin{verbatim} <a-asset-item>\end{verbatim} que nos facilita A-Frame.
+
+El resultado lo podremos observar en el escenario de la manera que nos muestra la figura 3.18
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/gltfs.png}
+  \caption{Nuevas figuras del editor}\label{fig}
+\end{figure}
+
+\textbf{Tarea 3}
+
+En esta tarea añadiremos la posibilidad de modificar más propiedades de las figuras.
+
+Con la creación de nuevos componentes se añadió la capacidad de modificar la orientación de la figura en los tres ejes, rugosidad,la metalización y la opacidad a esta última se le añade una funcionalidad especial la cual puede hacer la figura transparente.
+
+El resultado se puede observar en la figura 3.16
+
+\textbf{Tarea 4}
+
+Por ultimo nos centraremos en la compatibilidad de nuestro escenario con la gafas de realidad virtual, en concreto, las Oculus Quest. 
+
+\subsection{Resultado}
+
+Como resultado de este sprint, puedo decir que estoy más cerca de la versión final. Solo nos quedaría refinar algunos aspectos. Hemos conseguido crear nuevas funcionalidades, mejorar nuestra aplicación y hacerla más usable para el usuario. Este sprint está disponible en el repositorio del proyecto, tanto el código \footnote{\url{https://github.com/julianperezm/A-frame/tree/master/SeventhExercise}} como el escenario, ya sea la versión escritorio \footnote{\url{https://julianperezm.github.io/A-frame/SeventhExercise/Desktop.html}} o la versión de realidad virtual \footnote{\url{https://julianperezm.github.io/A-frame/SeventhExercise/Glasses.html}}
+
+\section{Sprint Final}
+En este sprint nos centraremos en el final del proyecto puliendo los últimos detalles y añadiendo las ultimas funcionalidades de la aplicación. Acercándolo lo más posible a un editor usable y también lo más atractivo posible.
+
+\subsection{Objetivo}
+Los objetivos de este sprint serán:
+\begin{itemize}
+    \item Seguir mejorando la interfaz de usuario haciéndolo más intuitivo
+    \item Añadir nuevos ambientes al editor.
+\end{itemize}
+
+\subsection{Desarrollo}
+Seguiremos dividiendo las el desarrollo del sprint en tareas.
+
+\textbf{Tarea 1}
+
+En este tarea seguiremos mejorando la interfaz de usuario para hacerla más intuitiva y sencilla para el usuario, añadiremos nuevos atributos, como son el porcentaje de progreso de las modificaciones de los materiales que se les pueden realizar a las figuras.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/menu2.png}
+  \caption{Nuevo menú de propiedades}\label{menu2}
+\end{figure}
+
+También añadiremos una luz en el pódium para que las modificaciones que le hacemos a la figura se puedan visualizar de una manera más clara.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+ \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/sinluz.png}
+  \caption{Podium sin luz}\label{single}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+  \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/luz.png}
+  \caption{Podium con luz}\label{scrum}
+  \end{minipage}
+\end{figure}
+
+\textbf{Tarea 2}
+
+En esta tarea nos centraremos en mejorar la funcionalidad de modo grupo, añadiremos un botón para así poder eliminar el manejador y el escenario quede mucho mas limpio.
+
+Además de esta mejora añadiremos una funcionalidad la cual te permita cambiar de ambiente al escenario.
+
+La eliminación de los manejadores es posible añadiendo un componente que añada opacidad a dichas figuras. el escenario con manejadores quedaría como muestra la figura 3.22 y sin manejadores como la figura 3.23.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+ \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/conm.png}
+  \caption{Escenario con manejadores}\label{single}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+  \includegraphics[width=7cm]{MemoriaTFG-JulianPerez/img/sinm.png}
+  \caption{Escenario sin manejadores}\label{scrum}
+  \end{minipage}
+\end{figure}
+
+Para los cambios de ambientes utilizaremos un componente creado por la comunidad, se puede encontrar en su repositorio de GitHub \footnote{\url{https://github.com/supermedium/aframe-environment-component}}. 
+
+El resultado de esta parte de la tarea se puede visualizar en la escena con un desplegable en el que puedes elegir que ambiente usar como se muestra en la figura 3.24.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=4cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/env.png}
+  \caption{Menú de ambientes}\label{menu2}
+\end{figure}
+
+\textbf{Tarea 3}
+
+Esta última tarea tratará de terminar la aplicación añadiéndole una página principal,
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/home.png}
+  \caption{Página de inicio}\label{home}
+\end{figure}
+
+y otra página de instrucciones.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm, keepaspectratio]{MemoriaTFG-JulianPerez/img/inst.png}
+  \caption{Página de instrucciones}\label{home}
+\end{figure}
+
+Amabas son accesibles entre ellas además del escenario.
+
+\subsection{Resultado}
+
+En este ultimo sprint he conseguido terminar el proyecto, este proyecto puede seguir desarrollándose y mejorando, puede ser el comienzo de algo grande. El código \footnote{\url{https://github.com/julianperezm/A-frame/tree/master/Home}}.  y el escenario, ya sea la versión escritorio \footnote{\url{https://julianperezm.github.io/A-frame/Home/HomeDesktop.html}} o la versión compatible con las gafas \footnote{\url{https://julianperezm.github.io/A-frame/Home/HomeGlasses.html}} están disponibles en el repositorio del proyecto en GitHub.
+
 \end{document}

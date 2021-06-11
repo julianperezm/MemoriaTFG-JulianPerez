@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plantilla de memoria en LaTeX para la ETSIT - Universidad Rey Juan Carlos
+%%
+%% Por Gregorio Robles <grex arroba gsyc.urjc.es>
+%%     Grupo de Sistemas y Comunicaciones
+%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
+%%     Universidad Rey Juan Carlos
+%% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
+%%  etc. Muchas gracias a todos)
+%%
+%% La última versión de esta plantilla está siempre disponible en:
+%%     https://github.com/gregoriorobles/plantilla-memoria
+%%
+%% Para obtener PDF, ejecuta en la shell:
+%%   make
+%% (las imágenes deben ir en PNG o JPG)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt]{book}
+%\usepackage[T1]{fontenc}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage{url}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}  %% H para posicionar figuras
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage{latexsym}  %% Logo LaTeX
+
+\title{Virtual reality editor for virtual reality scenes}
+\author{Julian A. Perez Muñoz}
+
+\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DISEÑO E IMPLEMENTACIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSIONES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+En este punto de la memoría, echaremos la vista atrás y visualizaremos si se lograrón los objetivos presentados en el capítulo 1, también comentaremos los problemas surgidos en la realización del proyecto.
+
+De manera general, se puede decir que he conseguido todos los objetivos propuestos al inicio del proyecto.
+
+Respecto de los objetivos generales realizados, 
+
+\begin{itemize}
+    \item La creación de un editor de escena en realidad virtual.
+    \item Este editor está basado en las tecnologías tanto de A-Frame como de WebGL
+    \item El funcionamiento tanto en un entorno de esctirio mediante el navegador web como en modor realidad virtual mediante las oculus quest.
+\end{itemize}
+
+Sobre los objetivos especificos conseguidos nos encontramos. 
+\begin{itemize}
+    \item La creación tanto de la página principal y página de usuario.
+    \item En cuanto a las funcionalidades propuestas
+    \begin{itemize}
+        \item La creación de un menú desde el cual crear y modificar distintos atributos de las figuras.
+        \item La creación del modo grupo, gracias a él podremos contruir una figura mediane la unión de varias.
+        \item La posibilidad de ocultamiento de los manejadores del escenario.
+        \item La oportunidad de modificar el ambiente del escenario.
+    \end{itemize}
+    \item Añadidura de movimiento al usuario en ambas versiones.
+    \item El uso de la plataforma Github para el alojo del proyecto, tanto de la aplicación como de la memoria como la Web. Esto se puede ver reflejado en los links adjuntos en el capitulo tres de esta memoria.
+\end{itemize}
+
+\section{Aplicación de lo aprendido}
+\label{sec:aplicacion}
+
+Durante la realización del grado, he obtenido conocimiento sobre distintos temas, una de ellas la programación, en disitintas asginaturas, los cuales me han permitido desarrollar este proyecto, tanto a la hora de aplicar lo aprendido como la manera de aprender lo necesario para el desarrollo de este.
+
+Algunas asignaturas de las que hablo son:
+\begin{enumerate}
+  \item El uso del navegador, tanto de la consola, como el tratamiento de errores, el conocimiento de la estructura del DOM en el cual poder añadir elementos y eventos y en menor medida el lenguaje HTML, estos conocminetos fueron adquiridos en la asignaturas, Desarrollo de Aplicaciones Telemáticas.
+  \item El lenguaje tanto HTML como JavaScipt,este último no muy en profundidad, los obtuve gracias a la asignatura Desarrollo de aplicaciones Telemáticas.
+  \item Sobre el uso del GitHub y el tratamiento de control de vesiones la asignatura Ingeniería en Sistemas de la Información fue muy importante.
+\end{enumerate}
+En resumen todas las aginaturas relacionadas con la programación me han aportado distintos concomientos ya sea distintos lenguajes o aprender a resolver los distintos problemas que han ido surgiendo a lo largo de la creación del proyecto.
+
+
+\section{Lecciones aprendidas}
+\label{sec:lecciones_aprendidas}
+
+Gracias a la creación de este Trabajo de Fin de grado he adquirido diversos conomientos y he aprendido muchas lecciones las cuales pasare a desarrollar a continuación.
+\begin{enumerate}
+  \item Uno de los principales y más usados en este proyecto, A-Frame. Dentro de este framework incluimos
+  \begin{itemize}
+      \item Creación de escenas
+      \item Creación de componentes, los cuales reaccionan con los elementos de la escena.
+      \item Construccion de distinos elementos de este framework como puede ser, la cámara, la iluminación, el ambiente, las figuras etc.
+  \end{itemize}
+  \item El lenguaje JavaScript, ya que este no se enseña en profundidad en la carrera y este trabajo me ha permitido aumentar el conociemtnos sobre este, la creación de eventos y la modificación en tiempo real de los elementos de la escena es un de las funciones de este lenguaje en el proyecto.
+  \item El uso de los entornos de realidad virtual ya sea tanto en el navegador como con las gafas de realidad virtual.
+  \item El aumento del conomiento de las herramientas de desarrollo de este proyecto, en las cuales se incluyen:
+  \begin{itemize}
+      \item LaTeX para la creación de textos técnicos como este.
+      \item Pycharm para el desarrollo del código de la aplicación
+      \item Github, como ya he contado aneriormente para el alojo del código y el tratamiento de control de versiones.
+  \end{itemize}
+\end{enumerate}
+
+
+\section{Trabajos futuros}
+\label{sec:trabajos_futuros}
+
+Como se suele decir en un proyecto de este tipo, Ningún proyecto se terminas, siempre se pueden añadir nuevas funcionalidades que amplien y mejoren este, por lo que a continuación enumeraré una seria de ideas para poder incluir en un futuro.
+
+\begin{itemize}
+    \item La posibilidad de poder guardar el escenario creado, ya sea una figura o todo el escario, de este modo poder añadir versatilidad al proyecto y podernos llevar las figuras creadas a otros tipos de escenarios.
+    \item La posibilidad de poder modificar los atributos de las figuras, directmante en estas, y no mediante un menú. En el caso del navegador, con el uso del ratón y en el caso de la realidad virutal, direcamente con los mando o con las manos.
+    \item Poder modificar las figuras de una manera más especifica, por ejemplo poder eliminar una parte de la figura.
+    \item Añadir más posibles ambientes al escenario.
+    \item Añadir más modelos 3D al escenario.
+    \item Añadir más fisicas a las figuras del esenario, como pueden ser, gravedad.
+\end{itemize}
+
+
+\end{document}
